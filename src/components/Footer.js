@@ -3,7 +3,6 @@ import styles from '../css/footer.module.css';
 import links from '../components/constants/links';
 import socialIcons from '../components/constants/social-icons';
 import { Link } from 'gatsby';
-import { FaRProject } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -20,14 +19,14 @@ const Footer = () => {
       <div className={styles.icons}>
         {socialIcons.map((item, index) => {
           return (
-            <a key={index} href={item.uel} target="_blank" rel="noopener noreferrer">
-              {item.icons}
+            <a key={index} href={item.url} target="_blank" rel="noopener noreferrer">
+              {item.icon}
             </a>
           );
         })}
       </div>
       <div className={styles.copyright}>
-        copyright &copy; backroads travel company {new Date().getFullYear()} all right reserver
+        copyright &copy; backroads travel company {new Date().getFullYear()} all rights reserver
       </div>
     </footer>
   );
