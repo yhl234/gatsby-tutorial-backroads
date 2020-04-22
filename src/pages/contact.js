@@ -8,7 +8,6 @@ const contact = ({ data }) => {
   return (
     <Layout>
       <StyledHero img={data.defaultBcg.childImageSharp.fluid}></StyledHero>
-      Hello from contact
       <Contact></Contact>
     </Layout>
   );
