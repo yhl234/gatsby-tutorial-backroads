@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import Contact from '../components/Contact/Contact';
 import StyledHero from '../components/StyledHero';
 import { graphql } from 'gatsby';
 
@@ -8,6 +9,7 @@ const contact = ({ data }) => {
     <Layout>
       <StyledHero img={data.defaultBcg.childImageSharp.fluid}></StyledHero>
       Hello from contact
+      <Contact></Contact>
     </Layout>
   );
 };
