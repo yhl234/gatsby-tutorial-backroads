@@ -1,16 +1,29 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import StyledHero from '../components/StyledHero';
+import Tours from '../components/Tours/Tours';
 import { graphql } from 'gatsby';
+
+import PropTypes from 'prop-types';
+import Tour from '../components/Tours/Tour';
+
 const tours = ({ data }) => {
   return (
     <Layout>
       <StyledHero img={data.defaultBcg.childImageSharp.fluid}></StyledHero>
-      <div>hello from tours page!!!</div>
+      <Tours />
     </Layout>
   );
 };
-
+Tour.propTypes = {
+  tour: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    days: PropTypes.number.isRequired,
+    images: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }),
+};
 export default tours;
 export const query = graphql`
   query {
