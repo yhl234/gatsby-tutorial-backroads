@@ -6,10 +6,13 @@ import { graphql } from 'gatsby';
 
 import PropTypes from 'prop-types';
 import Tour from '../components/Tours/Tour';
+import SEO from '../components/SEO';
 
 const tours = ({ data }) => {
   return (
     <Layout>
+      <SEO title="Tours" />
+
       <StyledHero img={data.defaultBcg.childImageSharp.fluid}></StyledHero>
       <Tours />
     </Layout>

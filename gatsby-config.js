@@ -7,6 +7,9 @@ module.exports = {
     description:
       'Explore awesome worldwide tours & discover what makes each of them unique. Forget your daily routine & say yes to adventure',
     author: '@Louis',
+    twitterUsername: '@leejepan',
+    image: '/defaultBcg.jpeg',
+    siteUrl: 'https://stupefied-bhaskara-fa461c.netlify.app',
   },
   plugins: [
     {
@@ -30,9 +33,19 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://stupefied-bhaskara-fa461c.netlify.app',
+        sitemap: 'https://stupefied-bhaskara-fa461c.netlify.app/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-playground`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
   ],
 };
